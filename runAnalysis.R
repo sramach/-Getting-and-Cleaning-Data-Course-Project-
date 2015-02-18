@@ -16,7 +16,7 @@ feature.data <- mutate(feature.data, AltCol = paste("V",ID,sep=""))
 activity.data <- read.table("UCI Har DataSet/activity_labels.txt",header=FALSE,col.names= c("ID","Activity"), colClasses=c("numeric","character"))
 
 ## Build a subset of features for just mean and std measures (features.to.include)
-## pass it thorugh a sequence of replacements to build final column names (feature.clean.names)
+## pass it through a sequence of replacements to build final column names (feature.clean.names)
 
 feature.to.include  <- filter(feature.data, str_detect(Feature, c("mean")) |  str_detect(Feature, c("std")) )
 feature.clean.names <- gsub("mean","Mean",feature.to.include$Feature)
@@ -29,7 +29,7 @@ feature.clean.names <- gsub("[()-]", "",feature.clean.names)
 
 train.data.X <- read.table("UCI Har DataSet/train/X_train.txt", header=FALSE,  col.names = feature.data$AltCol, check.names=FALSE)
 
-## filter and select just mean and std related columns
+## filter and select just mean and standard deviation columns
 
 train.data.X.f <- select(train.data.X, feature.to.include$ID)
 
@@ -46,7 +46,7 @@ train.data.Y <- read.table("UCI Har DataSet/train/y_train.txt", header=FALSE,  c
 train.data.subject <- read.table("UCI Har DataSet/train/subject_train.txt", header=FALSE, col.names = c("Subject"))
 
 ## use cbind to paste the 3 data frames together
-## 
+
 train.data <- cbind(train.data.subject,train.data.Y,train.data.X.f)
 
 ## merge the Activity Name and drop the Activity ID column
@@ -76,7 +76,6 @@ test.data.Y <- read.csv("UCI Har DataSet/test/y_test.txt", header=FALSE, sep= ""
 test.data.subject <- read.csv("UCI Har DataSet/test/subject_test.txt", header=FALSE, sep= "", col.names = c("Subject"))
 
 ## use cbind to paste the 3 test data frames together
-## 
 
 test.data <- cbind(test.data.subject,test.data.Y,test.data.X.f)
 
@@ -91,16 +90,18 @@ uci.har.data <- rbind(train.data.final, test.data.final)
 
 
 
-## melt the data set adn tunr measures into columns
+## melt the data set and turn measures into columns
 
 uci.har.melted <- melt(uci.har.data,id=c("Subject","Activity"), measure.vars = feature.clean.names, variable.name="Measure", value.name = "Value") 
 
 
-## group by Activty, Subject, Measure 
+## group by Activity, Subject, Measure 
+
 uci.subject.activity <- group_by(uci.har.melted, Subject, Activity, Measure)
 
 
-## summarize each variable(suing mean) to get the tidy summary data
+## summarize each variable(using mean) to get the tidy summary data
+
 uci.har.summary.clean <- summarise_each(uci.subject.activity, funs(mean))
 
 ## write the data into the current working directory (same as runAnalysis.R)
