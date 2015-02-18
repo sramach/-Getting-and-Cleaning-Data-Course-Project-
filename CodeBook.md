@@ -3,9 +3,9 @@
 ###Data Source
 
 * **The data linked to from the course website represents data collected from the accelerometers from the Samsung Galaxy S smartphone.**
-* **A full description is available at the [site](
+* **A full description is available at the [_site_](
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) where the data was obtained.**
-* **The data for this project can be found [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)**
+* **The data for this project can be found [_here_](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)**
 
 ###Data Files relevant to this Project
 
@@ -53,8 +53,10 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 * **Feature labels are cleaned up to remove the _ ,( and ) characters and also converted to CamelCase**
 * **To execute _runAnalysis.R_ please make sure the current working directory contains the unzipped _UCI HAR Dataset_ folder**.
 * **The tidy data output file will be written to the current working folder**
+
 ### List of Variables in scope for the project
-**Of the 561 avaialble variables the following 79 variables were included within the scope of this project.**
+
+**Of the 561 available variables the following 79 variables were included within the scope of this project. These were based on measurements obtained from 30 different subjects participating in 6 different activities over time. The final tidy data set provides an average of each variable for each activity and each subject.**
 
 * _**tBodyAcc-mean()-X**_
 * _**tBodyAcc-mean()-Y**_
