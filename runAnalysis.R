@@ -90,7 +90,7 @@ uci.har.data <- rbind(train.data.final, test.data.final)
 
 
 
-## melt the data set and turn measures into columns
+## melt the data set to create the measures, value columns and move the inidividal features into rows (long form)
 
 uci.har.melted <- melt(uci.har.data,id=c("Subject","Activity"), measure.vars = feature.clean.names, variable.name="Measure", value.name = "Value") 
 
