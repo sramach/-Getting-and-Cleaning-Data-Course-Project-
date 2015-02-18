@@ -27,7 +27,7 @@ The goal this project is to get the student to demonstrate ability to collect, w
  * **Rename the columns based using cleaned feature labels from step above.** 
 * **Bind the X, Y and Subject Data frames**
 * **Add the Activity Label Column and drop the Activity.ID column from the bound data frame**
-* **Test Data: Repeat above Get, Select, Bind and Add Activity Label steps for the test data** _**(from /test sub folder)_**
+* **Test Data: Repeat above Get, Select, Bind and Add Activity Label steps for the test data** _**(from /test sub folder)**_
 * **Create a combined test and train data frame** _**(uci.har.data)**_
 *  **Melt the data frame to create a Measure column and move feature measures into rows**
 *  **Group the data by Subject, Activity and Measure**
