@@ -20,9 +20,9 @@ The goal this project is to get the student to demonstrate ability to collect, w
  *  **Get the Mean and Standard Deviation Columns**
  *  **Clean the column labels, removing _ and () and convert to CamelCase**
 * **Get Training Data**
- * **feature measurements:  _train/X train.txt_** 
- * **training subjects: _train/subject train.txt_**
- * **training activity index: _train/y train.txt_**
+ * **feature measurements:  _train/X___train.txt_** 
+ * **training subjects: _train/subject___train.txt_**
+ * **training activity index: _train/y___train.txt_**
 * **Select Mean and Std Columns**
  * **Rename the columns based using cleaned feature labels from step above.** 
 * **Bind the X, Y and Subject Data frames**
